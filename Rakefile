@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/noqcks/typefascist"
   gem.license = "MIT"
   gem.summary = %Q{The font conversion gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.description = %Q{A simple gem to convert fonts from almost anything to almost anything}
   gem.email = "theodore.r.visser@gmail.com"
   gem.authors = ["Benji Visser"]
   # dependencies defined in Gemfile

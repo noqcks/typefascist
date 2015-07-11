@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 'typefascist'
+require_relative '../lib/typefascist/convert'
+require 'commander'
+require 'pry'
+
+Commander.configure do
+  program :name, 'Typefascist'
+  program :version, '0.1.0'
+  program :description, 'A font convertor'
+  program :help, 'Author', 'Ben Visser <benjamin.visser@telus.com>'
+
+  default_command :convert
+
+  command :convert do |command|
+    command.syntax = 'convert <file> --formats woff, otf'
+    command.description = 'Sets up project-specific IAM role and S3 buckets'
+    command.option '--formats ARRAY', Array, 'Formats to convert to'
+    command.action do |args, options|
+      options.default formats: 'woff2'
+      abort 'Please select a file to convert: typefascist <file>' unless args.first
+      from = File.extname(args.first).delete('.')
+      file = File.absolute_path args.first
+      options.formats.each do |format|
+        Convert.forge(file, from, format);
+      end
+    end
+  end
+end
