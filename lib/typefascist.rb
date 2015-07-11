@@ -1,2 +1,1 @@
-require "typefascist/version"
-require "typefascist/convert"
+require_relative "typefascist/convert"

@@ -1,4 +1,3 @@
-require "typefascist/version"
 require "rubypython"
 
 module Convert
