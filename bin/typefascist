@@ -3,6 +3,7 @@
 require 'bundler/setup'
 require_relative '../lib/typefascist'
 require 'commander'
+require 'terminal-announce'
 
 Commander.configure do
   program :name, 'Typefascist'
@@ -21,7 +22,11 @@ Commander.configure do
       abort 'Please select a file to convert: typefascist <file>' unless args.first
       from = File.extname(args.first).delete('.')
       file = File.absolute_path args.first
-      Convert.forge(file, from, options.format);
+      if(!File.exist?(file))
+        Announce.failure "The file #{file} does not exist"
+      else
+        Convert.forge(file, from, options.format);
+      end
     end
   end
 end
