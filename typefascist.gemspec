@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
     "Rakefile",
     "VERSION",
     "bin/typefascist",
+    "lib/convertors/sfnt_to_woff2",
     "lib/typefascist.rb",
     "lib/typefascist/convert.rb",
     "test/helper.rb",
