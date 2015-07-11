@@ -12,6 +12,7 @@ GEM
     builder (3.2.2)
     commander (4.3.4)
       highline (~> 1.7.2)
+    contracts (0.9)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     docile (1.1.5)
@@ -55,6 +56,7 @@ GEM
       multi_xml (~> 0.5)
       rack (~> 1.2)
     rack (1.6.4)
+    rainbow (2.0.0)
     rake (10.4.2)
     rdoc (3.12.2)
       json (~> 1.4)
@@ -87,6 +89,10 @@ GEM
       json (~> 1.8)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.0)
+    terminal-announce (1.0.0)
+      bundler
+      contracts
+      rainbow
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -105,6 +111,7 @@ DEPENDENCIES
   rubypython (~> 0.6)
   shoulda
   simplecov (~> 0)
+  terminal-announce (~> 1.0.0)
   yard (~> 0.7)
 
 BUNDLED WITH
